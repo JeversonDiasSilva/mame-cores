@@ -109,3 +109,4 @@ fi
 
 # Salva a sobrecarga no Batocera
 #batocera-save-overlay
+fi
