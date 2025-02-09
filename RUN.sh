@@ -108,8 +108,8 @@ if [ -n "$version" ]; then
     chmod -R 777 "/userdata/system/.dev/scripts/extra/cores"
     ln -s "/userdata/system/.dev/scripts/extra/cores"/* /usr/lib/libretro
     chattr +i -R "/userdata/system/.dev/scripts/extra/cores/READMI.MD"
-    chattr +i -R "/userdata/system/.dev/scripts/extra/cores/es_systems_mame.cfg"
     mv "/userdata/system/.dev/scripts/extra/cores/es_systems_mame.cfg" /userdata/system/configs/emulationstation
+        chattr +i -R "/userdata/system/configs/emulationstation/es_systems_mame.cfg"
 
 
     # Salva a sobrecarga no Batocera
