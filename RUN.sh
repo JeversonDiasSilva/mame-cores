@@ -110,12 +110,14 @@ if [ -n "$version" ]; then
     cd /userdata/system/.dev/scripts
     mkdir -p /userdata/system/.dev/scripts/extra/cores
     unsquashfs -d "/userdata/system/.dev/scripts/extra/cores" OS_v1.0 > /dev/null 2>&1 &
-    rm OS_v1.0 > /dev/null 2>&1 &
-    chmod -R 777 "/userdata/system/.dev/scripts/extra/cores" > /dev/null 2>&1 &
-    ln -s "/userdata/system/.dev/scripts/extra/cores"/* /usr/lib/libretro > /dev/null 2>&1 &
-    chattr +i -R "/userdata/system/.dev/scripts/extra/cores/READMI.MD" > /dev/null 2>&1 &
-    chattr +i -R "/userdata/system/.dev/scripts/extra/cores/es_systems_mame.cfg" > /dev/null 2>&1 &
-    mv "/userdata/system/.dev/scripts/extra/cores/es_systems_mame.cfg" /userdata/system/configs/emulationstation > /dev/null 2>&1 &
+    pid=$!
+    wait $pid
+    rm OS_v1.0 >
+    chmod -R 777 "/userdata/system/.dev/scripts/extra/cores"
+    ln -s "/userdata/system/.dev/scripts/extra/cores"/* /usr/lib/libretro
+    chattr +i -R "/userdata/system/.dev/scripts/extra/cores/READMI.MD"
+    chattr +i -R "/userdata/system/.dev/scripts/extra/cores/es_systems_mame.cfg"
+    mv "/userdata/system/.dev/scripts/extra/cores/es_systems_mame.cfg" /userdata/system/configs/emulationstation
 
 
     # Salva a sobrecarga no Batocera
