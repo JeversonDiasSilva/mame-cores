@@ -112,7 +112,7 @@ if [ -n "$version" ]; then
     unsquashfs -d "/userdata/system/.dev/scripts/extra/cores" OS_v1.0 > /dev/null 2>&1 &
     pid=$!
     wait $pid
-    rm OS_v1.0 >
+    rm OS_v1.0
     chmod -R 777 "/userdata/system/.dev/scripts/extra/cores"
     ln -s "/userdata/system/.dev/scripts/extra/cores"/* /usr/lib/libretro
     chattr +i -R "/userdata/system/.dev/scripts/extra/cores/READMI.MD"
