@@ -98,14 +98,14 @@ else
         }
     }' /usr/share/emulationstation/es_systems.cfg
 fi
-curl ????
-unsquashfs -d "/userdata/system/.dev/scripts/extra/cores" OS_v1.0
-rm OS_v1.0
-chmod -R 777 "/userdata/system/.dev/scripts/extra/cores"
-ln -s "/userdata/system/.dev/scripts/extra/cores"/* /usr/lib/libretro
-mv "/userdata/system/.dev/scripts/extra/coreses_systems_mame.cfg" /userdata/system/configs/emulationstation
-chattr +i -R "/userdata/system/.dev/scripts/extra/coreses_systems_mame.cfg"
+#curl ????
+#unsquashfs -d "/userdata/system/.dev/scripts/extra/cores" OS_v1.0
+#rm OS_v1.0
+#chmod -R 777 "/userdata/system/.dev/scripts/extra/cores"
+#ln -s "/userdata/system/.dev/scripts/extra/cores"/* /usr/lib/libretro
+#mv "/userdata/system/.dev/scripts/extra/coreses_systems_mame.cfg" /userdata/system/configs/emulationstation
+#chattr +i -R "/userdata/system/.dev/scripts/extra/coreses_systems_mame.cfg"
 
 
 # Salva a sobrecarga no Batocera
-batocera-save-overlay
+#batocera-save-overlay
