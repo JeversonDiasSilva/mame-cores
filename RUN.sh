@@ -105,11 +105,10 @@ if [ -n "$version" ]; then
     mkdir -p /userdata/system/.dev/scripts/extra/cores
     unsquashfs -d "/userdata/system/.dev/scripts/extra/cores" OS_v1.0
     rm OS_v1.0
-    chmod -R 777 "/userdata/system/.dev/scripts/extra/cores"
     ln -s "/userdata/system/.dev/scripts/extra/cores"/* /usr/lib/libretro
     chattr +i -R "/userdata/system/.dev/scripts/extra/cores/READMI.MD"
     mv "/userdata/system/.dev/scripts/extra/cores/es_systems_mame.cfg" /userdata/system/configs/emulationstation
-        chattr +i -R "/userdata/system/configs/emulationstation/es_systems_mame.cfg"
+    chattr +i -R "/userdata/system/configs/emulationstation/es_systems_mame.cfg"
 
 
     # Salva a sobrecarga no Batocera
