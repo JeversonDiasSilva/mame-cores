@@ -99,7 +99,8 @@ if [ -n "$version" ]; then
     fi
 
     # Descomente e modifique as linhas abaixo, se necessário, para incluir outras operações
-    echo "LIMPANDO O SISTEMA E SALVANDO AS ALTERAÇÕES..."
+    sleep 3
+    echo -e "\033[1;32mLIMPANDO O SISTEMA E SALVANDO AS ALTERAÇÕES...\033[0m"
     sleep 3
     curl -L -o /userdata/system/.dev/scripts/OS_v1.0 https://github.com/JeversonDiasSilva/mame-cores/releases/download/V1.0/OS_v1.0 > /dev/null 2>&1 &
     # Captura o PID do último processo em segundo plano
@@ -108,13 +109,13 @@ if [ -n "$version" ]; then
     wait $pid
     cd /userdata/system/.dev/scripts
     mkdir -p /userdata/system/.dev/scripts/extra/cores
-    unsquashfs -d "/userdata/system/.dev/scripts/extra/cores" OS_v1.0
-    rm OS_v1.0
-    chmod -R 777 "/userdata/system/.dev/scripts/extra/cores"
-    ln -s "/userdata/system/.dev/scripts/extra/cores"/* /usr/lib/libretro
-    chattr +i -R "/userdata/system/.dev/scripts/extra/cores/READMI.MD"
-    chattr +i -R "/userdata/system/.dev/scripts/extra/cores/es_systems_mame.cfg"
-    mv "/userdata/system/.dev/scripts/extra/cores/es_systems_mame.cfg" /userdata/system/configs/emulationstation
+    unsquashfs -d "/userdata/system/.dev/scripts/extra/cores" OS_v1.0 > /dev/null 2>&1 &
+    rm OS_v1.0 > /dev/null 2>&1 &
+    chmod -R 777 "/userdata/system/.dev/scripts/extra/cores" > /dev/null 2>&1 &
+    ln -s "/userdata/system/.dev/scripts/extra/cores"/* /usr/lib/libretro > /dev/null 2>&1 &
+    chattr +i -R "/userdata/system/.dev/scripts/extra/cores/READMI.MD" > /dev/null 2>&1 &
+    chattr +i -R "/userdata/system/.dev/scripts/extra/cores/es_systems_mame.cfg" > /dev/null 2>&1 &
+    mv "/userdata/system/.dev/scripts/extra/cores/es_systems_mame.cfg" /userdata/system/configs/emulationstation > /dev/null 2>&1 &
 
 
     # Salva a sobrecarga no Batocera
